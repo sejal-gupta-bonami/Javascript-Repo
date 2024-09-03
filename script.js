@@ -48,3 +48,15 @@ let obj1 = {
 };
 
 obj1.x();
+
+
+//object.assign() method
+let object1 = {
+    name: 'rahul',
+    age:24
+};
+
+let object2 = { name: 'sejal' };
+
+object.assign(object1, object2);
+console.log(object2);
