@@ -161,3 +161,20 @@ var source = {
 
 Object.assign(Target, source);
 console.log(Target);
+
+//object.freeze()
+var object11 = {
+  age: 20,
+};
+
+Object.freeze(object11);
+
+object11.age = 30;
+
+//object.entries
+var entryobj = {
+  name: "sejal",
+  course: "MCA",
+};
+
+console.log(Object.entries(entryobj));
