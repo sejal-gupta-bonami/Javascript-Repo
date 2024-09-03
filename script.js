@@ -178,3 +178,33 @@ var entryobj = {
 };
 
 console.log(Object.entries(entryobj));
+
+
+//Object.fromEntries
+var entryobj2 = [["name","sejal"],["age","23"]];
+  
+  console.log(entryobj2);
+console.log(Object.fromEntries(entryobj2));
+  
+
+//Object.seal()
+var newobj = {
+    name: "sejal",
+    age: 23
+}
+
+Object.seal(newobj);
+
+newobj.gender = 'f';
+
+console.log(newobj);
+
+
+//object.values
+var obb = {
+    a: "something",
+    b: 10,
+    c:true
+}
+  
+console.log(Object.values(obb));
