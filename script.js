@@ -1,4 +1,6 @@
 //THIS keyword in object method 
+
+//normal function
 let student = {
     name: 'John',
     age: 25,
@@ -6,8 +8,33 @@ let student = {
         console.log(this);
     }
 };
-
 student.x();
+
+//arrow function 
+let car2 = {
+  color: "red",
+  model: 5,
+  speed: () => {
+    console.log(this);
+  },
+};
+car2.speed();
+
+//nested arrow function
+let car3 = {
+    color: "black",
+    model: 7,
+    work : function(){
+        const hello = () => { 
+            console.log(this);
+        }
+        hello();
+    }
+}
+car3.work();
+//the enclosing lexical context for this arrow function is work function so it will return the object itself , not the window object
+
+
 
 //this keyword with object property
 let student2 = {
@@ -20,24 +47,6 @@ let student2 = {
 
 student2.x();
 
-//call() method 
-let name = {
-    firstname: 'sejal',
-    lastname: 'gupta',
-    print: function () {
-        console.log(this.firstname + " " + this.lastname);
-    }
-};
-
-name.print();
-
-let name2 = {
-    firstname: 'akshay',
-    lastname: 'saini',
-    
-};
-
-name.print.call(name2);
 
 //this keyword with arrow functions
 let obj1 = {
@@ -51,9 +60,88 @@ obj1.x();
 
 
 
-//arrow function 
-let a = 15;
-const func = (num) => {
-    console.log(num);
+//normal function vs arrow function 
+
+//return statement 
+//normal function 
+let p = 5;
+function show(x) {
+    return x;
 }
-func(a);
+console.log(show(p));
+
+//arrow function 
+let h = 15;
+const func2 = (num) => num + num; //if block is defined use return keyword
+console.log(func2(h));
+
+//accessing arguments
+//normal function
+function sum(ar1, ar2) {
+  console.log(arguments);
+}
+sum(5, 9);
+
+//arrow function
+const addit = (...args) => {
+  console.log(args);
+};
+addit(10, 20);
+
+//hoisitng difference
+//regular function
+regfunction();
+function regfunction() {
+  console.log("regular function");
+}
+//arrow function
+// arrowfunc(); // thows error
+const arrowfunc = () => {
+  console.log("arrow function");
+};
+arrowfunc();
+
+//CALL() method
+var employee1 = {
+  name: "jane",
+  surname: "doe",
+};
+
+var employee2 = {
+  name: "louis",
+  surname: "mark",
+};
+
+function printing(greet1, greet2) {
+  console.log(greet1 + " " + this.name + " " + this.surname + " " + greet2);
+}
+
+printing.call(employee1, "hello", "morning");
+printing.call(employee2, "hi", "afternoon");
+
+//APPLY() method
+var ob1 = {
+  id: 3,
+  age: 20,
+};
+var ob2 = {
+  id: 5,
+  age: 30,
+};
+
+function details(val1, val2) {
+  console.log(
+    this.id +
+      " " +
+      this.age +
+      " " +
+      "location : " +
+      val1 +
+      " " +
+      "gender " +
+      val2
+  );
+}
+
+details.apply(ob1, ["agra", "F"]);
+details.apply(ob2, ["delhi", "M"]);
