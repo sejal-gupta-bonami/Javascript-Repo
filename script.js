@@ -119,7 +119,8 @@ function printing(greet1, greet2) {
 printing.call(employee1, "hello", "morning");
 printing.call(employee2, "hi", "afternoon");
 
-//APPLY() method
+
+//APPLY() method 
 var ob1 = {
   id: 3,
   age: 20,
@@ -145,3 +146,18 @@ function details(val1, val2) {
 
 details.apply(ob1, ["agra", "F"]);
 details.apply(ob2, ["delhi", "M"]);
+
+//BIND() method
+//makes a copy of function
+
+//object.assign() method
+var Target = {
+  course: "Web programming",
+};
+
+var source = {
+  grade: 70,
+};
+
+Object.assign(Target, source);
+console.log(Target);
