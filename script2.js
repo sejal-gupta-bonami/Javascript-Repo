@@ -42,4 +42,23 @@ console.log(c);
 let p = arr1.shift();
 console.log(p);
 
-console.log(arr1.length);
+
+//splice
+//remove
+let color = ['pink', 'white', 'green'];
+let f = color.splice(1, 2);
+console.log(f); // returns deleted elements
+
+//add
+let color2 = ['pink', 'white', 'green'];
+color2.splice(2, 0,'black');
+
+//replace
+let color3= ['pink', 'white', 'green'];
+color3.splice(2, 1, 'black');
+console.log(color3);
+
+//negative index 
+let color4= ['pink', 'white', 'green'];
+color4.splice(-2, 1, 'black');
+console.log(color4);
