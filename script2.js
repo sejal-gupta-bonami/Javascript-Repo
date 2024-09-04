@@ -23,9 +23,23 @@ console.log(String(arr3));
 
 //push()
 var arr1 = ["one", "two", "three"];
-arr1.push("four", "five");
-console.log(arr1);
+let r = arr1.push("four", "five");
+console.log(r);
 
 var arr22 = ["one", "two", "three"];
 arr22.unshift("four", "five");
 console.log(arr22);
+
+//pop()
+let q = arr1.pop();
+console.log(q);
+
+//unshift()
+let c = arr1.unshift("nine");
+console.log(c);
+
+//shift
+let p = arr1.shift();
+console.log(p);
+
+console.log(arr1.length);
