@@ -141,3 +141,34 @@ console.log(ansObj);
 let ansArray = person.filter((x) => x.age < 30).map((x) => x.firstname);
 
 console.log(ansArray);
+
+
+//array desturcturing 
+let a1 = [1, 2, 3, 4];
+const [a, b] = a1;
+console.log(a);
+console.log(b);
+
+
+//object destructuring 
+let objj = {
+    name: 'rahul',
+    age: 22,
+    gender :"male"
+};
+
+const { name, gender } = objj;
+console.log(name);
+console.log(gender);
+
+
+//rest operator 
+const nums = [1, 2, 2, 3, 4];
+let answer = function (nums) {
+    let sum = 0;
+    sum = sum + nums[i];
+    return sum;
+}
+
+
+answer(nums)
