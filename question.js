@@ -9,11 +9,11 @@ const arrayOne = [
 
 let objectans = arrayOne.reduce(function (acc, curr) {
   if (acc[curr.grade]) {
-    acc[curr.grade].push(acc[curr.grade].name);
-  } else {
     acc[curr.grade] = [];
-    acc[curr.grade].push(acc[curr.grade].name);
   }
+
+  acc[curr.grade].push(curr.name);
+  
   return acc;
 }, {});
 

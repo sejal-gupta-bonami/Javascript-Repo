@@ -162,13 +162,90 @@ console.log(name);
 console.log(gender);
 
 
-//rest operator 
-const nums = [1, 2, 2, 3, 4];
-let answer = function (nums) {
-    let sum = 0;
-    sum = sum + nums[i];
+//rest operator use 
+//without rest 
+function add(arr){
+    let sum =0;
+    for(let i =0;i<arr.length ;i++){
+        sum+=arr[i];
+    }
     return sum;
 }
 
+const arr6=[1,2,3,4,5,6];
+console.log(add(arr6));
 
-answer(nums)
+//with rest 
+function add(...numbers){ 
+    let sum=0;
+  for(let i =0;i<numbers.length ;i++){
+        sum+=numbers[i];
+    }
+    return sum;
+}
+console.log(add(1, 2, 3, 4, 5, 6));
+
+//for loops
+const student = [1, 2, 3, 4, 5, 6, 7];
+//for loop
+const newarray = [];
+for (let i = 0; i < student.length; i++) {
+  newarray[i].push(student[i]);
+}
+
+console.log(newarray);
+
+//for each
+student.forEach((element) => {
+  console.log(element * 2);
+});
+
+//use of map
+let recipeMap = new Map([
+  ["cucumber", 500],
+  ["tomatoes", 350],
+  ["onion", 50],
+]);
+
+// iterate over keys (vegetables)
+for (let vegetable of recipeMap.keys()) {
+  alert(vegetable); // cucumber, tomatoes, onion
+}
+
+// iterate over values (amounts)
+for (let amount of recipeMap.values()) {
+  alert(amount); // 500, 350, 50
+}
+
+// iterate over [key, value] entries
+for (let entry of recipeMap) {
+  // the same as of recipeMap.entries()
+  alert(entry); // cucumber,500 (and so on)
+}
+
+//use of set
+let set = new Set();
+
+let john = { name: "John" };
+let pete = { name: "Pete" };
+let mary = { name: "Mary" };
+
+// visits, some users come multiple times
+set.add(john);
+set.add(pete);
+set.add(mary);
+set.add(john);
+set.add(mary);
+
+// set keeps only unique values
+alert(set.size); // 3
+
+for (let user of set) {
+  alert(user.name); // John (then Pete and Mary)
+}
+
+
+
+
+
+
